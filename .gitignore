@@ -30,4 +30,4 @@ build/
 
 ### VS Code ###
 .vscode/
-/docker/nginx-logs/
+/docker/nginx/nginx-logs/
