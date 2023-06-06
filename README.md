@@ -7,5 +7,5 @@ Nginx is entrypoint to the server, which retrieves message from database.
 1. Start your local docker engine
 2. Go to docker directory `cd docker`
 3. Execute `bash run-compose.sh` from repository root
-4. Open http://localhost/ to see message
+4. Open http://localhost/hello to see message redirected by nginx
 5. Stop compose by executing `docker-compose down` in terminal

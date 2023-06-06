@@ -20,8 +20,9 @@ services:
       dockerfile: Dockerfile
     networks:
       - hello-network
-    ports:
-      - '3000:3000'
+# hello-server should be accessed only via nginx container and redirected
+#    ports:
+#      - '8080:8080'
     depends_on:
       - hello-db
 
