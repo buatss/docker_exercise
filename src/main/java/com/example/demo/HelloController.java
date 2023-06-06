@@ -11,15 +11,19 @@ import java.sql.SQLException;
 @RestController
 @RequestMapping("/")
 public class HelloController {
+    private final HelloRepository repository;
+
     @Autowired
-    HelloRepository repository;
+    public HelloController(HelloRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping
     public ResponseEntity<String> hello() throws SQLException {
-        return ResponseEntity.ok("Hello!\n" + retrieveMessageFromDb());
+        return ResponseEntity.ok(retrieveMessageFromDb());
     }
 
-    private String retrieveMessageFromDb() throws SQLException {
+    private String retrieveMessageFromDb() {
         return repository.findById(1L).orElseGet(() -> new HelloEntity(0L, "Failed to retrieve from db")).getMessage();
     }
 }
